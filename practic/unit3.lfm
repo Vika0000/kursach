@@ -1,0 +1,53 @@
+object Form3: TForm3
+  Left = 240
+  Height = 312
+  Top = 155
+  Width = 540
+  Caption = 'Справка'
+  ClientHeight = 312
+  ClientWidth = 540
+  OnCreate = FormCreate
+  LCLVersion = '1.4.4.0'
+  object Memo1: TMemo
+    Left = 16
+    Height = 80
+    Top = 32
+    Width = 496
+    Lines.Strings = (
+      ' Программа Справочник фаната может обеспечивать поиск по полям: номер, игрок, '
+      'гражданство, клуб и титулы. Так же можно добавлять новые данные и удалять '
+      'устаревшие.'
+    )
+    TabOrder = 0
+  end
+  object Memo2: TMemo
+    Left = 16
+    Height = 136
+    Top = 144
+    Width = 496
+    Lines.Strings = (
+      ' Поиск организован по номеру, игроку, клубу, гражданству, титулам, для проведения '
+      'этого поиска использовались специальные процедуры. Чтобы осуществить поиск '
+      'минимум по двум параметрам, нужно вписать текст в поля и поставить галочки '
+      'напротив полей по которым идет поиск. Для удаления строки нужно: Нажать на '
+      'строку, которую хотите удалить и нажать на кнопку удаления.'
+    )
+    TabOrder = 1
+  end
+  object Label1: TLabel
+    Left = 16
+    Height = 15
+    Top = 120
+    Width = 147
+    Caption = 'Руководство пользователя'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 16
+    Height = 15
+    Top = 8
+    Width = 124
+    Caption = 'Описание программы'
+    ParentColor = False
+  end
+end

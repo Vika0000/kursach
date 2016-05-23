@@ -1,0 +1,345 @@
+object Form1: TForm1
+  Left = 449
+  Height = 499
+  Top = 93
+  Width = 725
+  Caption = 'Справочник фаната'
+  ClientHeight = 479
+  ClientWidth = 725
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  LCLVersion = '1.4.4.0'
+  object DBGrid1: TDBGrid
+    Left = 24
+    Height = 232
+    Top = 184
+    Width = 672
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'Номер'
+        Width = 55
+        FieldName = 'number'
+      end    
+      item
+        Title.Caption = 'Игрок'
+        Width = 200
+        FieldName = 'player'
+      end    
+      item
+        Title.Caption = 'Гражданство'
+        Width = 120
+        FieldName = 'nationality'
+      end    
+      item
+        Title.Caption = 'Клуб'
+        Width = 130
+        FieldName = 'team'
+      end    
+      item
+        Title.Caption = 'Аренда'
+        Width = 130
+        FieldName = 'rent'
+      end    
+      item
+        Title.Caption = 'Возраст'
+        Width = 30
+        FieldName = 'age'
+      end    
+      item
+        Title.Caption = 'Рост'
+        Width = 50
+        FieldName = 'height'
+      end    
+      item
+        Title.Caption = 'Вес'
+        Width = 50
+        FieldName = 'weight'
+      end    
+      item
+        Title.Caption = 'Амплуа'
+        Width = 60
+        FieldName = 'position'
+      end    
+      item
+        Title.Caption = 'Голы'
+        Width = 35
+        FieldName = 'goals'
+      end    
+      item
+        Title.Caption = 'Титулы'
+        Width = 500
+        FieldName = 'record'
+      end>
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object Edit1: TEdit
+    Left = 32
+    Height = 23
+    Top = 32
+    Width = 216
+    Enabled = False
+    OnChange = Edit1Change
+    TabOrder = 1
+  end
+  object Button1: TButton
+    Left = 533
+    Height = 25
+    Top = 30
+    Width = 75
+    Caption = 'Поиск'
+    OnClick = Button1Click
+    TabOrder = 2
+  end
+  object Label1: TLabel
+    Left = 33
+    Height = 15
+    Top = 8
+    Width = 38
+    Caption = 'Номер'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 33
+    Height = 15
+    Top = 64
+    Width = 34
+    Caption = 'Игрок'
+    ParentColor = False
+  end
+  object Edit2: TEdit
+    Left = 32
+    Height = 23
+    Top = 88
+    Width = 216
+    Enabled = False
+    TabOrder = 3
+  end
+  object Label3: TLabel
+    Left = 304
+    Height = 15
+    Top = 8
+    Width = 27
+    Caption = 'Клуб'
+    ParentColor = False
+  end
+  object Edit3: TEdit
+    Left = 304
+    Height = 23
+    Top = 32
+    Width = 208
+    Enabled = False
+    TabOrder = 4
+  end
+  object Label4: TLabel
+    Left = 304
+    Height = 15
+    Top = 64
+    Width = 71
+    Caption = 'Гражданство'
+    ParentColor = False
+  end
+  object Edit4: TEdit
+    Left = 304
+    Height = 23
+    Top = 88
+    Width = 208
+    Enabled = False
+    OnChange = Edit4Change
+    TabOrder = 5
+  end
+  object Button2: TButton
+    Left = 533
+    Height = 25
+    Top = 86
+    Width = 75
+    Caption = 'Удалить'
+    OnClick = Button2Click
+    TabOrder = 6
+  end
+  object Button3: TButton
+    Left = 568
+    Height = 32
+    Top = 424
+    Width = 123
+    Caption = 'Показать все записи'
+    OnClick = Button3Click
+    TabOrder = 7
+  end
+  object Label5: TLabel
+    Left = 33
+    Height = 15
+    Top = 120
+    Width = 41
+    Caption = 'Титулы'
+    ParentColor = False
+  end
+  object Edit6: TEdit
+    Left = 33
+    Height = 23
+    Top = 144
+    Width = 479
+    Enabled = False
+    TabOrder = 8
+  end
+  object CheckBox1: TCheckBox
+    Left = 8
+    Height = 19
+    Top = 32
+    Width = 20
+    OnChange = CheckBox1Change
+    TabOrder = 9
+  end
+  object CheckBox2: TCheckBox
+    Left = 8
+    Height = 19
+    Top = 88
+    Width = 20
+    OnChange = CheckBox2Change
+    TabOrder = 10
+  end
+  object CheckBox3: TCheckBox
+    Left = 280
+    Height = 19
+    Top = 32
+    Width = 20
+    OnChange = CheckBox3Change
+    TabOrder = 11
+  end
+  object CheckBox4: TCheckBox
+    Left = 280
+    Height = 19
+    Top = 88
+    Width = 20
+    OnChange = CheckBox4Change
+    TabOrder = 12
+  end
+  object CheckBox5: TCheckBox
+    Left = 8
+    Height = 19
+    Top = 144
+    Width = 20
+    OnChange = CheckBox5Change
+    TabOrder = 13
+  end
+  object MySQL55Connection1: TMySQL55Connection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'football'
+    KeepConnection = False
+    Password = 'ROOT'
+    Transaction = SQLTransaction1
+    UserName = 'root'
+    CharSet = 'utf8'
+    LogEvents = []
+    left = 56
+    top = 440
+  end
+  object SQLQuery1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    FieldDefs = <    
+      item
+        Name = 'number'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'player'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'nationality'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'team'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'rent'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'age'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'height'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'weight'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'position'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'goals'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'record'
+        DataType = ftString
+        Precision = -1
+        Size = 900
+      end>
+    Active = True
+    Database = MySQL55Connection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from football.www;'
+    )
+    Params = <>
+    left = 280
+    top = 440
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = True
+    Database = MySQL55Connection1
+    left = 176
+    top = 440
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    left = 376
+    top = 440
+  end
+  object MainMenu1: TMainMenu
+    left = 448
+    top = 440
+    object MenuItem1: TMenuItem
+      Caption = 'Добавить'
+      OnClick = MenuItem1Click
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Справка'
+      OnClick = MenuItem2Click
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Выход'
+      OnClick = MenuItem3Click
+    end
+  end
+end
